@@ -1,7 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import Header from './components/Header';
-import About from './components/About';
 import Education from './components/Education';
 import Experience from './components/Experience';
 import Projects from './components/Projects';
@@ -77,21 +76,6 @@ function BottomNavbar() {
         </Link>
         
         <Link 
-          to="/projects" 
-          style={{
-            color: '#ffffff',
-            textDecoration: 'none',
-            display: 'flex',
-            flexDirection: 'column',
-            alignItems: 'center',
-            fontSize: '0.875rem'
-          }}
-        >
-          <span style={{ fontSize: '1.5rem', marginBottom: '0.25rem' }}>💻</span>
-          <span>Projects</span>
-        </Link>
-        
-        <Link 
           to="/experience" 
           style={{
             color: '#ffffff',
@@ -104,6 +88,21 @@ function BottomNavbar() {
         >
           <span style={{ fontSize: '1.5rem', marginBottom: '0.25rem' }}>💼</span>
           <span>Experience</span>
+        </Link>
+        
+        <Link 
+          to="/projects" 
+          style={{
+            color: '#ffffff',
+            textDecoration: 'none',
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+            fontSize: '0.875rem'
+          }}
+        >
+          <span style={{ fontSize: '1.5rem', marginBottom: '0.25rem' }}>💻</span>
+          <span>Projects</span>
         </Link>
       </div>
     </nav>
@@ -119,10 +118,17 @@ function HomePage() {
         {/* Empty anchor for "Home" */}
         <section id="home" />
 
-        <About />
-        <Education />
-        <Experience />
-        <Projects />
+        <div style={{ padding: '2rem', maxWidth: '1200px', margin: '0 auto' }}>
+          <section style={{ marginBottom: '4rem' }}>
+            <Experience />
+          </section>
+          <section style={{ marginBottom: '4rem' }}>
+            <Projects />
+          </section>
+          <section style={{ marginBottom: '4rem' }}>
+            <Education />
+          </section>
+        </div>
         <Contact />
       </main>
     </div>

@@ -46,7 +46,7 @@ export default function Header() {
       width: '100%',
       zIndex: 1000
     }}>
-      <h1 style={{ margin: 0, fontSize: '2.5rem', marginBottom: '0.5rem' }}>
+      <h1 style={{ margin: 0, fontSize: '2rem', marginBottom: '0.5rem' }}>
         Kathryne
       </h1>
       <div style={{ 
@@ -69,7 +69,7 @@ export default function Header() {
         )}
       </div>
       <p style={{ margin: '0.5rem 0 0 0', fontSize: '1.2rem', opacity: 0.8 }}>
-        Full-Stack Developer
+        Computer Engineering Student
       </p>
       
       <style jsx>{`

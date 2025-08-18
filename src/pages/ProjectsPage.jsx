@@ -54,89 +54,55 @@ export default function ProjectsPage() {
 
   return (
     <div style={{ padding: '2rem', maxWidth: '1200px', margin: '0 auto' }}>
-      <h1 style={{ textAlign: 'center', marginBottom: '3rem', color: '#ffffff' }}>
-        My Projects
+      <div style={{ height: '180px' }} />
+      <h1 style={{ textAlign: 'center', margin: '0 0 30px 0', color: '#ffffff', fontSize: '2rem', width: '100%' }}>
+        Projects
       </h1>
-      
-      <div style={{ display: 'grid', gap: '3rem' }}>
-        {projects.map(project => (
-          <div key={project.id} style={{
-            backgroundColor: '#2a2a2a',
-            borderRadius: '12px',
-            padding: '2rem',
-            boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)'
-          }}>
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '2rem', alignItems: 'start' }}>
-              <div>
-                <img 
-                  src={project.image} 
-                  alt={project.title}
-                  style={{ 
-                    width: '100%', 
-                    borderRadius: '8px',
-                    marginBottom: '1rem'
-                  }}
-                />
-              </div>
-              
-              <div>
-                <h2 style={{ color: '#ffffff', marginBottom: '1rem' }}>{project.title}</h2>
-                <p style={{ color: '#cccccc', marginBottom: '1.5rem', lineHeight: '1.6' }}>
-                  {project.description}
-                </p>
-                
-                <div style={{ marginBottom: '1.5rem' }}>
-                  <h3 style={{ color: '#ffffff', marginBottom: '0.5rem' }}>Technologies Used:</h3>
-                  <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem' }}>
-                    {project.technologies.map(tech => (
-                      <span key={tech} style={{
-                        backgroundColor: '#646cff',
-                        color: 'white',
-                        padding: '0.25rem 0.75rem',
-                        borderRadius: '20px',
-                        fontSize: '0.875rem'
-                      }}>
-                        {tech}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-                
-                <div style={{ marginBottom: '1.5rem' }}>
-                  <h3 style={{ color: '#ffffff', marginBottom: '0.5rem' }}>Key Features:</h3>
-                  <ul style={{ color: '#cccccc', paddingLeft: '1.5rem' }}>
-                    {project.features.map((feature, index) => (
-                      <li key={index} style={{ marginBottom: '0.25rem' }}>{feature}</li>
-                    ))}
-                  </ul>
-                </div>
-                
-                <div style={{ display: 'flex', gap: '1rem' }}>
-                  <a href={project.github} style={{
-                    backgroundColor: '#333',
-                    color: 'white',
-                    padding: '0.75rem 1.5rem',
-                    borderRadius: '6px',
-                    textDecoration: 'none',
-                    display: 'inline-block'
+
+      <div style={{ display: 'flex', justifyContent: 'center' }}>
+        <div style={{ display: 'grid', gap: '3rem', maxWidth: '900px', width: '100%' }}>
+          {projects.map(project => (
+            <div key={project.id} className="modern-card" style={{
+              backgroundColor: 'rgba(255,255,255,0.95)',
+              borderRadius: '20px',
+              padding: '2rem',
+              margin: '0 0.5rem',
+              boxShadow: '0 6px 24px 0 rgba(167,139,250,0.12)',
+              transition: 'transform 0.2s, box-shadow 0.2s',
+              cursor: 'pointer',
+            }}
+            onMouseOver={e => { e.currentTarget.style.transform = 'scale(1.025)'; e.currentTarget.style.boxShadow = '0 12px 32px 0 rgba(167,139,250,0.18)'; }}
+            onMouseOut={e => { e.currentTarget.style.transform = 'scale(1)'; e.currentTarget.style.boxShadow = '0 6px 24px 0 rgba(167,139,250,0.12)'; }}
+            >
+              <h3 style={{ color: '#a78bfa', fontSize: '1.5rem', fontWeight: 700, marginBottom: '0.5rem' }}>{project.title}</h3>
+              <h4 style={{ color: '#7c3aed', fontSize: '1.1rem', fontWeight: 600, marginBottom: '0.5rem' }}>{project.subtitle}</h4>
+              <p style={{ color: '#444', marginBottom: '1rem', lineHeight: '1.6' }}>{project.description}</p>
+              <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem', marginBottom: '1rem' }}>
+                {project.technologies.map(tech => (
+                  <span key={tech} style={{
+                    backgroundColor: '#ede9fe',
+                    color: '#7c3aed',
+                    padding: '0.25rem 0.75rem',
+                    borderRadius: '20px',
+                    fontSize: '0.95rem',
+                    fontWeight: 500
                   }}>
-                    View Code
-                  </a>
-                  <a href={project.live} style={{
-                    backgroundColor: '#646cff',
-                    color: 'white',
-                    padding: '0.75rem 1.5rem',
-                    borderRadius: '6px',
-                    textDecoration: 'none',
-                    display: 'inline-block'
-                  }}>
-                    Live Demo
-                  </a>
-                </div>
+                    {tech}
+                  </span>
+                ))}
               </div>
+              {project.link && (
+                <a href={project.link} target="_blank" rel="noopener noreferrer" style={{
+                  color: '#a78bfa',
+                  textDecoration: 'underline',
+                  fontWeight: 600
+                }}>
+                  View Project
+                </a>
+              )}
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
     </div>
   );
