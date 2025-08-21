@@ -1,8 +1,9 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 const projects = [
-  { title: 'Software Engineering Co-op', description: 'Software engineering co-op at Arius Technology Inc.', link: '#' },
-  { title: 'Firmware Member', description: 'I am a firmware member with Open Robotics UBC.', link: '#' },
+  { title: 'Software Engineering Co-op', description: 'Refactor and improve next-generation 2D/3D image acquisition...', link: '#', id: 1 },
+  { title: 'Firmware Member', description: 'Researching firmware modules in C++ capable of integrating ultrasonic...', link: '#', id: 2 },
+  { title: 'Math Tutor', description: 'Designed personalized lessons to help high school students grasp complex...', link: '#', id: 3 },
 ];
 export default function Experience() {
   const navigate = useNavigate();
@@ -24,7 +25,7 @@ export default function Experience() {
             }}
             onMouseOver={e => { e.currentTarget.style.transform = 'scale(1.025)'; e.currentTarget.style.boxShadow = '0 12px 32px 0 rgba(167,139,250,0.18)'; }}
             onMouseOut={e => { e.currentTarget.style.transform = 'scale(1)'; e.currentTarget.style.boxShadow = '0 6px 24px 0 rgba(167,139,250,0.12)'; }}
-            onClick={() => navigate(`/experience#job-${idx}`)}
+            onClick={() => navigate(`/experience#job-${p.id}`)}
           >
             <h3 style={{ margin: '0 0 0.5rem', color: '#a78bfa' }}>{p.title}</h3>
             <p style={{ margin: 0, color: '#555' }}>{p.description}</p>

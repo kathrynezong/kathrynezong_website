@@ -1,6 +1,22 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 
 export default function ExperiencePage() {
+  const location = useLocation();
+
+  useEffect(() => {
+    // Check if there's a hash in the URL and scroll to that element
+    if (location.hash) {
+      const element = document.querySelector(location.hash);
+      if (element) {
+        // Add a small delay to ensure the page is fully rendered
+        setTimeout(() => {
+          element.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }, 100);
+      }
+    }
+  }, [location.hash]);
+
   const experience = [
     {
       id: 1,
@@ -8,12 +24,11 @@ export default function ExperiencePage() {
       position: "Software Engineering Co-op",
       duration: "May 2025 - Present",
       location: "Richmond, BC",
-      description: "Leading development of enterprise web applications and mentoring junior developers.",
+      // description: "Leading development of enterprise web applications and mentoring junior developers.",
       achievements: [
-        "Led a team of 5 developers in building a customer portal serving 10,000+ users",
-        "Reduced application load time by 40% through optimization and caching strategies",
-        "Implemented CI/CD pipeline reducing deployment time from 2 hours to 15 minutes",
-        "Mentored 3 junior developers, improving team productivity by 25%"
+        "Refactor and improve next-generation 2D/3D image acquisition and processing software",
+        "Researched and proposed alternative techniques to determine 3D object position and orientation using Python Open3D library",
+        "Tested and developed a replacement algorithm for surface normal calculations within the existing codebase,improving accuracy of color correction and overall rendering quality"
       ],
       technologies: ["C++", "Python", "CMake", "GTest", "Azure DevOps", "Git", "Jira", "Jenkins"]
     },
@@ -23,36 +38,33 @@ export default function ExperiencePage() {
       position: "Firmware Member",
       duration: "Jan 2025 - Present",
       location: "Vancouver, BC",
-      description: "Developed responsive web applications and collaborated with design teams.",
+      // description: "Developed responsive web applications and collaborated with design teams.",
       achievements: [
-        "Built 15+ responsive web applications using React and TypeScript",
-        "Collaborated with UX/UI designers to implement pixel-perfect designs",
-        "Improved website accessibility score from 65% to 95%",
-        "Reduced bundle size by 30% through code splitting and optimization"
+        "Researching firmware modules in C++ capable of integrating ultrasonic, IMU, and lidar sensors on STM32 microcontroller",
+        "Writing testcases for sensor modules to ensure validity, accuracy, and reliability using CMake and GMock",
+        "Gaining practical knowledge of Robot Operating Systems (ROS) and Real-Time Operating Systems (RTOS)"
       ],
       technologies: ["C++", "RTOS", "ROS", "Github", "CMake", "GTest"]
     },
     {
       id: 3,
-      company: "Startup Ventures",
-      position: "Junior Developer",
-      duration: "2019 - 2020",
-      location: "Remote",
-      description: "Contributed to various startup projects and learned modern development practices.",
+      company: "Math Tutor Network",
+      position: "Math Tutor",
+      duration: "2024 - Present",
+      location: "Vancouver, BC",
+      // description: "Contributed to various startup projects and learned modern development practices.",
       achievements: [
-        "Developed MVP for 3 different startup ideas",
-        "Learned modern development practices and tools",
-        "Contributed to open-source projects",
-        "Built strong foundation in full-stack development"
+        "Designed personalized lessons to help high school students grasp complex math concepts and boostacademic performance",
+        "Fostered confidence and problem-solving skills through one-on-one and group tutoring sessions",
+        "Provided targeted support for homework, test preparation, and critical thinking development"
       ],
-      technologies: ["JavaScript", "React", "Node.js", "MongoDB", "Express"]
+      skills: ["Communication", "Organization", "Patience", "Problem-solving", "Teaching"]
     }
   ];
 
   const skills = {
     "Languages": ["C/C++", "Python", "Java", "ARM", "SystemVerilog", "JavaScript"],
-    "Backend": ["Node.js", "Express", "Python", "Django", "PostgreSQL", "MongoDB", "Redis"],
-    "DevOps": ["Docker", "Kubernetes", "AWS", "CI/CD", "Git", "Linux"],
+    "DevOps": ["CI/CD", "Git", "Linux"],
     "Tools": ["VS Code", "Jira", "Slack", "Notion", "Teams"]
   };
 
@@ -69,7 +81,7 @@ export default function ExperiencePage() {
         <div style={{ display: 'flex', justifyContent: 'center' }}>
           <div style={{ display: 'grid', gap: '2rem', maxWidth: '900px', width: '100%' }}>
             {experience.map(job => (
-              <div key={job.id} className="modern-card" style={{
+              <div key={job.id} id={`job-${job.id}`} className="modern-card" style={{
                 backgroundColor: 'rgba(255,255,255,0.95)',
                 borderRadius: '20px',
                 padding: '2rem',
@@ -98,7 +110,7 @@ export default function ExperiencePage() {
                   {job.description}
                 </p>
                 <div style={{ marginBottom: '1.5rem' }}>
-                  <h4 style={{ color: '#a78bfa', marginBottom: '0.75rem', fontWeight: 600 }}>Key Achievements:</h4>
+                  <h4 style={{ color: '#a78bfa', marginBottom: '0.75rem', fontWeight: 600 }}>Description:</h4>
                   <ul style={{ color: '#444', paddingLeft: '1.5rem' }}>
                     {job.achievements.map((achievement, index) => (
                       <li key={index} style={{ marginBottom: '0.5rem', lineHeight: '1.5' }}>
@@ -108,10 +120,12 @@ export default function ExperiencePage() {
                   </ul>
                 </div>
                 <div>
-                  <h4 style={{ color: '#a78bfa', marginBottom: '0.75rem', fontWeight: 600 }}>Technologies Used:</h4>
+                  <h4 style={{ color: '#a78bfa', marginBottom: '0.75rem', fontWeight: 600 }}>
+                    {job.technologies ? 'Technologies Used:' : 'Skills:'}
+                  </h4>
                   <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem' }}>
-                    {job.technologies.map(tech => (
-                      <span key={tech} style={{
+                    {(job.technologies || job.skills).map(item => (
+                      <span key={item} style={{
                         backgroundColor: '#ede9fe',
                         color: '#7c3aed',
                         padding: '0.25rem 0.75rem',
@@ -119,7 +133,7 @@ export default function ExperiencePage() {
                         fontSize: '0.95rem',
                         fontWeight: 500
                       }}>
-                        {tech}
+                        {item}
                       </span>
                     ))}
                   </div>

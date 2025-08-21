@@ -47,7 +47,7 @@ export default function Header() {
       zIndex: 1000
     }}>
       <h1 style={{ margin: 0, fontSize: '2rem', marginBottom: '0.5rem' }}>
-        Kathryne
+        Kathryne Zong
       </h1>
       <div style={{ 
         minHeight: '2rem', 
