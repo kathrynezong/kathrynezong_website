@@ -21,7 +21,7 @@ export default function ProjectsPage() {
     {
       id: 1,
       title: "Portfolio Website",
-      subtitle: "Personal • Present",
+      subtitle: "Personal • Aug 2025",
       description: "A personal portfolio website built with React to showcase projects, experience, and skills.",
       achievements: [
         "Designed and implemented a responsive portfolio website using React and modern web technologies",
@@ -29,7 +29,7 @@ export default function ProjectsPage() {
         "Built with React Router for seamless navigation between project and experience pages"
       ],
       technologies: ["React", "JavaScript", "HTML", "CSS", "Vite"],
-      github: "#",
+      github: "https://github.com/kathrynezong/kathrynezong_website",
       live: "#"
     },
     {

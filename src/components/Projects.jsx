@@ -36,7 +36,7 @@ export default function Projects() {
         <div>
           <ul style={{ color: '#1a1a1a', listStyle: 'none', padding: 0, marginBottom: '1.5rem' }}>
             <li style={{ marginBottom: '1rem', cursor: 'pointer' }} onClick={() => navigate(`/projects#project-1`)}>
-              <span style={{ color: '#90D5FF', fontWeight: 600 }}>Portfolio Website</span> - Personal (Oct 2025)
+              <span style={{ color: '#90D5FF', fontWeight: 600 }}>Portfolio Website</span> - Personal (Aug 2025)
               <p style={{ color: '#6b7280', fontSize: '0.9rem', marginTop: '0.25rem', marginLeft: '2rem' }}>
                 Personal portfolio website showcasing projects, experience, and skills...
               </p>
