@@ -37,22 +37,23 @@ export default function Header() {
 
   return (
     <header style={{ 
-      backgroundColor: '#1a1a1a', 
-      color: 'white', 
-      padding: '2rem', 
+      backgroundColor: '#ffffff', 
+      color: '#1a1a1a', 
+      padding: '2rem 2rem 1rem 2rem', 
       textAlign: 'center',
       position: 'fixed',
       top: 0,
       width: '100%',
-      zIndex: 1000
+      zIndex: 1000,
+      borderBottom: '1px solid #e5e7eb'
     }}>
-      <h1 style={{ margin: 0, fontSize: '2rem', marginBottom: '0.5rem' }}>
+      <h1 style={{ margin: 0, fontSize: '2rem', marginBottom: '0.5rem', fontWeight: 600 }}>
         Kathryne Zong
       </h1>
       <div style={{ 
         minHeight: '2rem', 
-        fontSize: '1.2rem', 
-        color: '#646cff',
+        fontSize: '1rem', 
+        color: '#3b82f6',
         fontFamily: 'monospace',
         display: 'flex',
         justifyContent: 'center',
@@ -68,7 +69,7 @@ export default function Header() {
           </span>
         )}
       </div>
-      <p style={{ margin: '0.5rem 0 0 0', fontSize: '1.2rem', opacity: 0.8 }}>
+      <p style={{ margin: '0.5rem 0 0 0', fontSize: '1rem', color: '#6b7280' }}>
         Computer Engineering Student
       </p>
       

@@ -20,6 +20,20 @@ export default function ProjectsPage() {
   const projects = [
     {
       id: 1,
+      title: "Portfolio Website",
+      subtitle: "Personal • Present",
+      description: "A personal portfolio website built with React to showcase projects, experience, and skills.",
+      achievements: [
+        "Designed and implemented a responsive portfolio website using React and modern web technologies",
+        "Created a clean, minimal interface with a light blue and white color scheme",
+        "Built with React Router for seamless navigation between project and experience pages"
+      ],
+      technologies: ["React", "JavaScript", "HTML", "CSS", "Vite"],
+      github: "#",
+      live: "#"
+    },
+    {
+      id: 1,
       title: "Obstacle Avoidance Vehicle",
       subtitle: "Personal • Dec 2024",
       description: "An autonomous vehicle project that demonstrates embedded systems programming and hardware integration.",
@@ -63,8 +77,8 @@ export default function ProjectsPage() {
   ];
 
   return (
-    <div style={{ padding: '2rem', maxWidth: '1200px', margin: '0 auto', paddingTop: '110px' }}>
-      <h1 style={{ textAlign: 'center', margin: '0 0 60px 0', color: '#ffffff', fontSize: '2.5rem', width: '100%' }}>
+    <div style={{ padding: '2rem', maxWidth: '1200px', margin: '0 auto', paddingTop: '2rem' }}>
+      <h1 style={{ textAlign: 'center', margin: '0 0 60px 0', color: '#90D5FF', fontSize: '2.5rem', width: '100%', fontWeight: 600 }}>
         Projects
       </h1>
 
@@ -72,23 +86,23 @@ export default function ProjectsPage() {
         <div style={{ display: 'grid', gap: '3rem', maxWidth: '900px', width: '100%' }}>
           {projects.map(project => (
             <div key={project.id} id={`project-${project.id}`} className="modern-card" style={{
-              backgroundColor: 'rgba(255,255,255,0.95)',
-              borderRadius: '20px',
+              backgroundColor: '#ffffff',
+              border: '2px solid #90D5FF',
+              borderRadius: '12px',
               padding: '2rem',
               margin: '0 0.5rem',
-              boxShadow: '0 6px 24px 0 rgba(167,139,250,0.12)',
-              transition: 'transform 0.2s, box-shadow 0.2s',
+              transition: 'transform 0.2s',
               cursor: 'pointer',
             }}
-            onMouseOver={e => { e.currentTarget.style.transform = 'scale(1.025)'; e.currentTarget.style.boxShadow = '0 12px 32px 0 rgba(167,139,250,0.18)'; }}
-            onMouseOut={e => { e.currentTarget.style.transform = 'scale(1)'; e.currentTarget.style.boxShadow = '0 6px 24px 0 rgba(167,139,250,0.12)'; }}
+            onMouseOver={e => { e.currentTarget.style.transform = 'translateY(-4px)'; e.currentTarget.style.boxShadow = '0 4px 12px rgba(144, 213, 255, 0.3)'; }}
+            onMouseOut={e => { e.currentTarget.style.transform = 'translateY(0)'; e.currentTarget.style.boxShadow = 'none'; }}
             >
-              <h3 style={{ color: '#a78bfa', fontSize: '1.5rem', fontWeight: 700, marginBottom: '0.5rem' }}>{project.title}</h3>
-              <h4 style={{ color: '#7c3aed', fontSize: '1.1rem', fontWeight: 600, marginBottom: '0.5rem' }}>{project.subtitle}</h4>
-              <p style={{ color: '#444', marginBottom: '1.5rem', lineHeight: '1.6' }}>{project.description}</p>
+              <h3 style={{ color: '#90D5FF', fontSize: '1.5rem', fontWeight: 600, marginBottom: '0.5rem' }}>{project.title}</h3>
+              <h4 style={{ color: '#6b7280', fontSize: '1.1rem', fontWeight: 600, marginBottom: '0.5rem' }}>{project.subtitle}</h4>
+              <p style={{ color: '#1a1a1a', marginBottom: '1.5rem', lineHeight: '1.6' }}>{project.description}</p>
               <div style={{ marginBottom: '1.5rem' }}>
-                <h4 style={{ color: '#a78bfa', marginBottom: '0.75rem', fontWeight: 600 }}>Key Achievements:</h4>
-                <ul style={{ color: '#444', paddingLeft: '1.5rem' }}>
+                <h4 style={{ color: '#90D5FF', marginBottom: '0.75rem', fontWeight: 600 }}>Key Achievements:</h4>
+                <ul style={{ color: '#1a1a1a', paddingLeft: '1.5rem' }}>
                   {project.achievements.map((achievement, index) => (
                     <li key={index} style={{ marginBottom: '0.5rem', lineHeight: '1.5' }}>
                       {achievement}
@@ -99,8 +113,9 @@ export default function ProjectsPage() {
               <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem', marginBottom: '1rem' }}>
                 {project.technologies.map(tech => (
                   <span key={tech} style={{
-                    backgroundColor: '#ede9fe',
-                    color: '#7c3aed',
+                    backgroundColor: '#E6F5FF',
+                    color: '#90D5FF',
+                    border: '1px solid #90D5FF',
                     padding: '0.25rem 0.75rem',
                     borderRadius: '20px',
                     fontSize: '0.95rem',
@@ -110,17 +125,24 @@ export default function ProjectsPage() {
                   </span>
                 ))}
               </div>
-              {/* Temporarily disabled - no project links available
-              {project.github && (
+              {/* GitHub links disabled since repository is a fork/private */}
+              {project.github !== "#" && (
                 <a href={project.github} target="_blank" rel="noopener noreferrer" style={{
-                  color: '#a78bfa',
-                  textDecoration: 'underline',
-                  fontWeight: 600
-                }}>
-                  View Project
+                  color: '#90D5FF',
+                  textDecoration: 'none',
+                  fontWeight: 600,
+                  display: 'inline-block',
+                  padding: '0.5rem 1rem',
+                  border: '2px solid #90D5FF',
+                  borderRadius: '6px',
+                  transition: 'all 0.2s'
+                }}
+                onMouseEnter={e => { e.target.style.backgroundColor = '#90D5FF'; e.target.style.color = '#ffffff'; }}
+                onMouseLeave={e => { e.target.style.backgroundColor = 'transparent'; e.target.style.color = '#90D5FF'; }}
+                >
+                  View on GitHub
                 </a>
               )}
-              */}
             </div>
           ))}
         </div>

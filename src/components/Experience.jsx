@@ -8,29 +8,35 @@ const projects = [
 export default function Experience() {
   const navigate = useNavigate();
   return (
-    <section id="experience" style={{ margin: '4rem 0' }}>
-      <h2 style={{ color: '#ffffff', marginBottom: '2rem', fontSize: '2rem', textAlign: 'center', fontWeight: 700 }}>Experience</h2>
-      <div style={{ display: 'grid', gap: '2rem', justifyContent: 'center' }}>
-        {projects.map((p, idx) => (
-          <div
-            key={idx}
-            style={{
-              backgroundColor: 'rgba(255,255,255,0.95)',
-              borderRadius: '20px',
-              padding: '2rem',
-              margin: '0 0.5rem',
-              boxShadow: '0 6px 24px 0 rgba(167,139,250,0.12)',
-              transition: 'transform 0.2s, box-shadow 0.2s',
-              cursor: 'pointer',
-            }}
-            onMouseOver={e => { e.currentTarget.style.transform = 'scale(1.025)'; e.currentTarget.style.boxShadow = '0 12px 32px 0 rgba(167,139,250,0.18)'; }}
-            onMouseOut={e => { e.currentTarget.style.transform = 'scale(1)'; e.currentTarget.style.boxShadow = '0 6px 24px 0 rgba(167,139,250,0.12)'; }}
-            onClick={() => navigate(`/experience#job-${p.id}`)}
-          >
-            <h3 style={{ margin: '0 0 0.5rem', color: '#a78bfa' }}>{p.title}</h3>
-            <p style={{ margin: 0, color: '#555' }}>{p.description}</p>
-          </div>
-        ))}
+    <section id="experience" style={{ margin: '3rem 0' }}>
+      <div style={{ marginBottom: '2rem' }}>
+        <h3 style={{ color: '#1a1a1a', marginBottom: '1.5rem', fontSize: '1.3rem', fontWeight: 600 }}>what i've been up to:</h3>
+        
+        <div>
+          {/* <p style={{ color: '#1a1a1a', marginBottom: '1rem' }}>
+            <span style={{ fontWeight: 600 }}>working at:</span>
+          </p> */}
+          <ul style={{ color: '#1a1a1a', listStyle: 'none', padding: 0, marginBottom: '1.5rem' }}>
+            <li style={{ marginBottom: '1rem', cursor: 'pointer' }} onClick={() => navigate(`/experience#job-1`)}>
+              <span style={{ color: '#90D5FF', fontWeight: 600 }}>Arius Technology Inc.</span> - Software Engineering Co-op (May 2025 - Present)
+              <p style={{ color: '#6b7280', fontSize: '0.9rem', marginTop: '0.25rem', marginLeft: '2rem' }}>
+                Refactoring next-generation 2D/3D image acquisition and processing software...
+              </p>
+            </li>
+            <li style={{ marginBottom: '1rem', cursor: 'pointer' }} onClick={() => navigate(`/experience#job-2`)}>
+              <span style={{ color: '#90D5FF', fontWeight: 600 }}>Open Robotics UBC</span> - Firmware Member (Jan 2025 - Present)
+              <p style={{ color: '#6b7280', fontSize: '0.9rem', marginTop: '0.25rem', marginLeft: '2rem' }}>
+                Firmware development using C/C++ for ultrasonic, IMU, and LiDAR sensors...
+              </p>
+            </li>
+            <li style={{ marginBottom: '1rem', cursor: 'pointer' }} onClick={() => navigate(`/experience#job-3`)}>
+              <span style={{ color: '#90D5FF', fontWeight: 600 }}>Math Tutor Network</span> - Math Tutor (2024 - 2025)
+              <p style={{ color: '#6b7280', fontSize: '0.9rem', marginTop: '0.25rem', marginLeft: '2rem' }}>
+                Designed personalized lessons to help high school students grasp complex math concepts...
+              </p>
+            </li>
+          </ul>
+        </div>
       </div>
     </section>
   );

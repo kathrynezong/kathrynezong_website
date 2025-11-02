@@ -1,6 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
-import Header from './components/Header';
+import About from './components/About';
 import Education from './components/Education';
 import Experience from './components/Experience';
 import Projects from './components/Projects';
@@ -11,7 +11,7 @@ import ExperiencePage from './pages/ExperiencePage';
 function Navbar() {
   const navItems = [
     { id: 'home',      label: 'Home' },
-    { id: 'about',     label: 'About' },
+    // { id: 'about',     label: 'About' },
     { id: 'education', label: 'Education' },
     { id: 'experience',label: 'Experience' },
     { id: 'projects',  label: 'Projects' },
@@ -19,7 +19,7 @@ function Navbar() {
   ];
 
   return (
-    <nav style={{ backgroundColor: '#333', overflow: 'hidden' }}>
+    <nav style={{ backgroundColor: '#ffffff', borderBottom: '1px solid #e5e7eb', overflow: 'hidden' }}>
       <ul style={{ display: 'flex', listStyle: 'none', margin: 0, padding: 0 }}>
         {navItems.map(item => (
           <li key={item.id} style={{ flex: 1 }}>
@@ -27,7 +27,7 @@ function Navbar() {
               href={`#${item.id}`}
               style={{
                 display: 'block',
-                color: 'white',
+                color: '#1a1a1a',
                 textAlign: 'center',
                 padding: '14px 16px',
                 textDecoration: 'none',
@@ -45,8 +45,8 @@ function Navbar() {
 function BottomNavbar() {
   return (
     <nav style={{ 
-      backgroundColor: '#1a1a1a', 
-      borderTop: '1px solid #333',
+      backgroundColor: '#ffffff', 
+      borderTop: '1px solid #e5e7eb',
       position: 'fixed',
       bottom: 0,
       width: '100%',
@@ -63,7 +63,7 @@ function BottomNavbar() {
         <Link 
           to="/" 
           style={{
-            color: '#ffffff',
+            color: '#1a1a1a',
             textDecoration: 'none',
             display: 'flex',
             flexDirection: 'column',
@@ -71,29 +71,14 @@ function BottomNavbar() {
             fontSize: '0.875rem'
           }}
         >
-          <span style={{ fontSize: '1.5rem', marginBottom: '0.25rem' }}>🏠</span>
+          <span style={{ fontSize: '1.5rem', marginBottom: '0.25rem' }}>🧊</span>
           <span>Home</span>
-        </Link>
-        
-        <Link 
-          to="/experience" 
-          style={{
-            color: '#ffffff',
-            textDecoration: 'none',
-            display: 'flex',
-            flexDirection: 'column',
-            alignItems: 'center',
-            fontSize: '0.875rem'
-          }}
-        >
-          <span style={{ fontSize: '1.5rem', marginBottom: '0.25rem' }}>💼</span>
-          <span>Experience</span>
         </Link>
         
         <Link 
           to="/projects" 
           style={{
-            color: '#ffffff',
+            color: '#1a1a1a',
             textDecoration: 'none',
             display: 'flex',
             flexDirection: 'column',
@@ -101,8 +86,23 @@ function BottomNavbar() {
             fontSize: '0.875rem'
           }}
         >
-          <span style={{ fontSize: '1.5rem', marginBottom: '0.25rem' }}>💻</span>
+          <span style={{ fontSize: '1.5rem', marginBottom: '0.25rem' }}>🎐</span>
           <span>Projects</span>
+        </Link>
+        
+        <Link 
+          to="/experience" 
+          style={{
+            color: '#1a1a1a',
+            textDecoration: 'none',
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+            fontSize: '0.875rem'
+          }}
+        >
+          <span style={{ fontSize: '1.5rem', marginBottom: '0.25rem' }}>💠</span>
+          <span>Experience</span>
         </Link>
       </div>
     </nav>
@@ -111,24 +111,15 @@ function BottomNavbar() {
 
 function HomePage() {
   return (
-    <div className="app-container">
-      <Header />
-      <Navbar />
-      <main style={{ paddingTop: '80px', paddingBottom: '100px' }}>
+    <div className="app-container" style={{ maxWidth: '800px', margin: '0 auto', padding: '0 1rem' }}>
+      <main style={{ paddingTop: '2rem', paddingBottom: '100px', textAlign: 'left' }}>
         {/* Empty anchor for "Home" */}
         <section id="home" />
 
-        <div style={{ padding: '2rem', maxWidth: '1200px', margin: '0 auto' }}>
-          <section style={{ marginBottom: '4rem' }}>
-            <Experience />
-          </section>
-          <section style={{ marginBottom: '4rem' }}>
-            <Projects />
-          </section>
-          <section style={{ marginBottom: '4rem' }}>
-            <Education />
-          </section>
-        </div>
+        <About />
+        <Education />
+        <Experience />
+        <Projects />
         <Contact />
       </main>
     </div>
@@ -138,18 +129,16 @@ function HomePage() {
 export default function App() {
   return (
     <Router>
-      <div style={{ minHeight: '100vh', backgroundColor: '#242424' }}>
+      <div style={{ minHeight: '100vh', backgroundColor: '#ffffff' }}>
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/projects" element={
-            <div style={{ paddingBottom: '100px' }}>
-              <Header />
+            <div style={{ paddingBottom: '100px', paddingTop: '2rem' }}>
               <ProjectsPage />
             </div>
           } />
           <Route path="/experience" element={
-            <div style={{ paddingBottom: '100px' }}>
-              <Header />
+            <div style={{ paddingBottom: '100px', paddingTop: '2rem' }}>
               <ExperiencePage />
             </div>
           } />

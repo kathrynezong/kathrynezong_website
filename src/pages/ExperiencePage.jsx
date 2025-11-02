@@ -27,30 +27,30 @@ export default function ExperiencePage() {
       // description: "Leading development of enterprise web applications and mentoring junior developers.",
       achievements: [
         "Refactor and improve next-generation 2D/3D image acquisition and processing software",
-        "Researched and proposed alternative techniques to determine 3D object position and orientation using Python Open3D library",
-        "Tested and developed a replacement algorithm for surface normal calculations within the existing codebase,improving accuracy of color correction and overall rendering quality"
+        "Researched, implemented, and evaluated alternative 3D pose estimation and surface normal calculation methods using the Python Open3D library, improving color correction accuracy and overall rendering quality",
+        "Extended and refactored the codebase to support new data formats and enhance flexibility for future features and applications",
+        "Collaborate in Agile workflows through daily stand-up meetings and project management tools including Jira, Git, and Azure DevOps"
       ],
       technologies: ["C++", "Python", "CMake", "GTest", "Azure DevOps", "Git", "Jira", "Jenkins"]
     },
     {
       id: 2,
       company: "Open Robotics UBC",
-      position: "Firmware Member",
+      position: "Software/Firmware Member",
       duration: "Jan 2025 - Present",
       location: "Vancouver, BC",
-      // description: "Developed responsive web applications and collaborated with design teams.",
       achievements: [
-        "Researching firmware modules in C++ capable of integrating ultrasonic, IMU, and lidar sensors on STM32 microcontroller",
-        "Writing testcases for sensor modules to ensure validity, accuracy, and reliability using CMake and GMock",
-        "Gaining practical knowledge of Robot Operating Systems (ROS) and Real-Time Operating Systems (RTOS)"
+        "Firmware development using C/C++ for ultrasonic, IMU, and LiDAR sensors.",
+        "Implementing unit tests for sensor modules using CMake and Google Test to verify sensor accuracy and system reliability",
+        "Collaborating on design of a scalable telemetry system for real-time sensor data collection, visualization, and post-processing using ESP-32 microcontrollers"
       ],
-      technologies: ["C++", "RTOS", "ROS", "Github", "CMake", "GTest"]
+      technologies: ["C++", "C", "CMake", "Google Test", "ESP-32", "RTOS", "ROS", "GitHub"]
     },
     {
       id: 3,
       company: "Math Tutor Network",
       position: "Math Tutor",
-      duration: "2024 - Present",
+      duration: "2024 - 2025",
       location: "Vancouver, BC",
       // description: "Contributed to various startup projects and learned modern development practices.",
       achievements: [
@@ -69,36 +69,36 @@ export default function ExperiencePage() {
   };
 
   return (
-    <div style={{ padding: '2rem', maxWidth: '1200px', margin: '0 auto', paddingTop: '110px' }}>
-      <h1 style={{ textAlign: 'center', margin: '0 0 60px 0', color: '#ffffff', fontSize: '2.5rem', width: '100%' }}>
+    <div style={{ padding: '2rem', maxWidth: '1200px', margin: '0 auto', paddingTop: '2rem' }}>
+      <h1 style={{ textAlign: 'center', margin: '0 0 60px 0', color: '#90D5FF', fontSize: '2.5rem', width: '100%', fontWeight: 600 }}>
         Experience & Skills
       </h1>
       
       {/* Experience Section */}
       <section style={{ marginBottom: '4rem' }}>
-        <h2 style={{ color: '#ffffff', marginBottom: '2rem', fontSize: '2rem', textAlign: 'center' }}>Experience</h2>
+        <h2 style={{ color: '#90D5FF', marginBottom: '2rem', fontSize: '2rem', textAlign: 'center', fontWeight: 600 }}>Experience</h2>
         
         <div style={{ display: 'flex', justifyContent: 'center' }}>
           <div style={{ display: 'grid', gap: '2rem', maxWidth: '900px', width: '100%' }}>
             {experience.map(job => (
               <div key={job.id} id={`job-${job.id}`} className="modern-card" style={{
-                backgroundColor: 'rgba(255,255,255,0.95)',
-                borderRadius: '20px',
+                backgroundColor: '#ffffff',
+                border: '2px solid #90D5FF',
+                borderRadius: '12px',
                 padding: '2rem',
                 margin: '0 0.5rem',
-                boxShadow: '0 6px 24px 0 rgba(167,139,250,0.12)',
-                transition: 'transform 0.2s, box-shadow 0.2s',
+                transition: 'transform 0.2s',
                 cursor: 'pointer',
               }}
-              onMouseOver={e => { e.currentTarget.style.transform = 'scale(1.025)'; e.currentTarget.style.boxShadow = '0 12px 32px 0 rgba(167,139,250,0.18)'; }}
-              onMouseOut={e => { e.currentTarget.style.transform = 'scale(1)'; e.currentTarget.style.boxShadow = '0 6px 24px 0 rgba(167,139,250,0.12)'; }}
+              onMouseOver={e => { e.currentTarget.style.transform = 'translateY(-4px)'; e.currentTarget.style.boxShadow = '0 4px 12px rgba(144, 213, 255, 0.3)'; }}
+              onMouseOut={e => { e.currentTarget.style.transform = 'translateY(0)'; e.currentTarget.style.boxShadow = 'none'; }}
               >
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '1rem' }}>
                   <div>
-                    <h3 style={{ color: '#a78bfa', marginBottom: '0.5rem', fontSize: '1.5rem', fontWeight: 700 }}>
+                    <h3 style={{ color: '#90D5FF', marginBottom: '0.5rem', fontSize: '1.5rem', fontWeight: 600 }}>
                       {job.position}
                     </h3>
-                    <h4 style={{ color: '#7c3aed', marginBottom: '0.25rem', fontSize: '1.2rem', fontWeight: 600 }}>
+                    <h4 style={{ color: '#90D5FF', marginBottom: '0.25rem', fontSize: '1.2rem', fontWeight: 600 }}>
                       {job.company}
                     </h4>
                     <p style={{ color: '#6b7280', fontSize: '0.95rem' }}>
@@ -110,8 +110,8 @@ export default function ExperiencePage() {
                   {job.description}
                 </p>
                 <div style={{ marginBottom: '1.5rem' }}>
-                  <h4 style={{ color: '#a78bfa', marginBottom: '0.75rem', fontWeight: 600 }}>Description:</h4>
-                  <ul style={{ color: '#444', paddingLeft: '1.5rem' }}>
+                  <h4 style={{ color: '#90D5FF', marginBottom: '0.75rem', fontWeight: 600 }}>Description:</h4>
+                  <ul style={{ color: '#1a1a1a', paddingLeft: '1.5rem' }}>
                     {job.achievements.map((achievement, index) => (
                       <li key={index} style={{ marginBottom: '0.5rem', lineHeight: '1.5' }}>
                         {achievement}
@@ -120,14 +120,15 @@ export default function ExperiencePage() {
                   </ul>
                 </div>
                 <div>
-                  <h4 style={{ color: '#a78bfa', marginBottom: '0.75rem', fontWeight: 600 }}>
+                  <h4 style={{ color: '#90D5FF', marginBottom: '0.75rem', fontWeight: 600 }}>
                     {job.technologies ? 'Technologies Used:' : 'Skills:'}
                   </h4>
                   <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem' }}>
                     {(job.technologies || job.skills).map(item => (
                       <span key={item} style={{
-                        backgroundColor: '#ede9fe',
-                        color: '#7c3aed',
+                        backgroundColor: '#E6F5FF',
+                        color: '#90D5FF',
+                        border: '1px solid #90D5FF',
                         padding: '0.25rem 0.75rem',
                         borderRadius: '20px',
                         fontSize: '0.95rem',
@@ -146,31 +147,32 @@ export default function ExperiencePage() {
       
       {/* Skills Section */}
       <section>
-        <h2 style={{ color: '#ffffff', marginBottom: '2rem', fontSize: '2rem', textAlign: 'center' }}>Technical Skills</h2>
+        <h2 style={{ color: '#90D5FF', marginBottom: '2rem', fontSize: '2rem', textAlign: 'center', fontWeight: 600 }}>Technical Skills</h2>
         
         <div style={{ display: 'flex', justifyContent: 'center' }}>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '2rem', maxWidth: '900px', width: '100%' }}>
             {Object.entries(skills).map(([category, skillList]) => (
               <div key={category} className="modern-card" style={{
-                backgroundColor: 'rgba(255,255,255,0.95)',
-                borderRadius: '20px',
+                backgroundColor: '#ffffff',
+                border: '2px solid #90D5FF',
+                borderRadius: '12px',
                 padding: '1.5rem',
                 margin: '0 0.5rem',
-                boxShadow: '0 6px 24px 0 rgba(167,139,250,0.12)',
-                transition: 'transform 0.2s, box-shadow 0.2s',
+                transition: 'transform 0.2s',
                 cursor: 'pointer',
               }}
-              onMouseOver={e => { e.currentTarget.style.transform = 'scale(1.025)'; e.currentTarget.style.boxShadow = '0 12px 32px 0 rgba(167,139,250,0.18)'; }}
-              onMouseOut={e => { e.currentTarget.style.transform = 'scale(1)'; e.currentTarget.style.boxShadow = '0 6px 24px 0 rgba(167,139,250,0.12)'; }}
+              onMouseOver={e => { e.currentTarget.style.transform = 'translateY(-4px)'; e.currentTarget.style.boxShadow = '0 4px 12px rgba(144, 213, 255, 0.3)'; }}
+              onMouseOut={e => { e.currentTarget.style.transform = 'translateY(0)'; e.currentTarget.style.boxShadow = 'none'; }}
               >
-                <h3 style={{ color: '#a78bfa', marginBottom: '1rem', fontSize: '1.3rem', fontWeight: 700 }}>
+                <h3 style={{ color: '#90D5FF', marginBottom: '1rem', fontSize: '1.3rem', fontWeight: 600 }}>
                   {category}
                 </h3>
                 <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem' }}>
                   {skillList.map(skill => (
                     <span key={skill} style={{
-                      backgroundColor: '#ede9fe',
-                      color: '#7c3aed',
+                      backgroundColor: '#E6F5FF',
+                      color: '#90D5FF',
+                      border: '1px solid #90D5FF',
                       padding: '0.25rem 0.75rem',
                       borderRadius: '20px',
                       fontSize: '0.95rem',
