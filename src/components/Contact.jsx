@@ -3,7 +3,7 @@ export default function Contact() {
   return (
     <section id="contact" style={{ color: '#1a1a1a', margin: '3rem 0' }}>
       <p style={{ fontSize: '1.1rem', marginBottom: '1rem' }}>
-        feel free toreach out!
+        feel free to reach out!
       </p>
       <div style={{ fontSize: '1rem', lineHeight: '2' }}>
         <div style={{ marginBottom: '0.5rem' }}>

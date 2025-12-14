@@ -63,10 +63,45 @@ export default function ExperiencePage() {
   ];
 
   const skills = {
-    "Languages": ["C/C++", "Python", "Java", "ARM", "SystemVerilog", "JavaScript"],
-    "DevOps": ["CI/CD", "Git", "Linux"],
-    "Tools": ["VS Code", "Jira", "Slack", "Notion", "Teams"]
+    "Programming Languages": [
+      "C / C++",
+      "Python",
+      "Java",
+      "JavaScript",
+      "Swift",
+      "SystemVerilog",
+      "ARM Assembly"
+    ],
+  
+    "Hardware & Embedded Systems": [
+      "FPGA Development",
+      "Embedded Systems",
+      "Arduino",
+      "Circuit Analysis",
+      "Lab Instrumentation"
+    ],
+  
+    "Web & Software": [
+      "HTML",
+      "CSS",
+      "REST APIs",
+      "FastAPI",
+      "React",
+      "Next.js"
+    ],
+  
+    "Tools & Workflow": [
+      "Git",
+      "Linux",
+      "CMake",
+      "CI/CD",
+      "Quartus Prime",
+      "ModelSim",
+      "PlatformIO",
+      "VS Code"
+    ]
   };
+  
 
   return (
     <div style={{ padding: '2rem', maxWidth: '1200px', margin: '0 auto', paddingTop: '2rem' }}>

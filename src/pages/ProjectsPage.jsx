@@ -19,6 +19,33 @@ export default function ProjectsPage() {
 
   const projects = [
     {
+      id: 0,
+      title: "20-20-20 Break Timer Extension",
+      subtitle: "Personal • Nov 2025",
+      description: "A Chrome extension that helps protect your eyes by implementing the 20-20-20 rule with screen lock reminders.",
+      achievements: [
+        "Developed a Chrome extension timer that follows the 20-20-20 rule (every 20 minutes, look at something 20 feet away for 20 seconds)",
+        "Implemented screen lock functionality to remind users to take breaks",
+        "Created an intuitive interface for managing break reminders and timer settings"
+      ],
+      technologies: ["JavaScript", "Chrome Extension API", "HTML", "CSS"],
+      github: "https://github.com/kathrynezong/healthy-eyes-chrome-ext",
+      live: "#"
+    },
+    {
+      id: 5,
+      title: "ResumeCritic",
+      subtitle: "Personal • Sept 2025 - Present",
+      description: "A full-stack NLP-powered resume analysis platform that analyzes resumes against job descriptions using spaCy and rule-based keyword matching.",
+      achievements: [
+        "Designed and built a full-stack resume analysis platform using Next.js, FastAPI, and spaCy, enabling automated extraction and comparison of technical keywords from resumes and job descriptions",
+        "Implemented PDF parsing, NLP-based keyword matching, and scoring logic, paired with a responsive React UI for real-time analysis and feedback"
+      ],
+      technologies: ["Next.js", "React", "FastAPI", "Python", "spaCy", "NLP", "PDF Parsing"],
+      github: "https://github.com/kathrynezong/ResumeCritic",
+      live: "#"
+    },
+    {
       id: 1,
       title: "Portfolio Website",
       subtitle: "Personal • Aug 2025",
@@ -28,12 +55,12 @@ export default function ProjectsPage() {
         "Created a clean, minimal interface with a light blue and white color scheme",
         "Built with React Router for seamless navigation between project and experience pages"
       ],
-      technologies: ["React", "JavaScript", "HTML", "CSS", "Vite"],
+      technologies: ["React", "JavaScript", "HTML", "CSS", "Vite", "Vercel"],
       github: "https://github.com/kathrynezong/kathrynezong_website",
       live: "#"
     },
     {
-      id: 1,
+      id: 2,
       title: "Obstacle Avoidance Vehicle",
       subtitle: "Personal • Dec 2024",
       description: "An autonomous vehicle project that demonstrates embedded systems programming and hardware integration.",
@@ -47,7 +74,7 @@ export default function ProjectsPage() {
       live: "#"
     },
     {
-      id: 2,
+      id: 3,
       title: "Simple RISC Machine",
       subtitle: "UBC • Oct 2024 - Dec 2024",
       description: "A complete processor design project implementing a Simple RISC architecture with FPGA integration.",
@@ -61,7 +88,7 @@ export default function ProjectsPage() {
       live: "#"
     },
     {
-      id: 3,
+      id: 4,
       title: "Quiz Application",
       subtitle: "UBC • Oct 2024 - Dec 2024",
       description: "A collaborative educational application designed to help UBC students study more efficiently.",
