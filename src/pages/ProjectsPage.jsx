@@ -5,11 +5,9 @@ export default function ProjectsPage() {
   const location = useLocation();
 
   useEffect(() => {
-    // Check if there's a hash in the URL and scroll to that element
     if (location.hash) {
       const element = document.querySelector(location.hash);
       if (element) {
-        // Add a small delay to ensure the page is fully rendered
         setTimeout(() => {
           element.scrollIntoView({ behavior: 'smooth', block: 'center' });
         }, 100);
@@ -18,6 +16,34 @@ export default function ProjectsPage() {
   }, [location.hash]);
 
   const projects = [
+    {
+      id: 6,
+      title: "Autonomous Vehicle Perception & Navigation System",
+      subtitle: "UBC • Jan 2026 - Apr 2026",
+      description: "An autonomous perception pipeline on the F1TENTH racing platform integrating LiDAR and RGB-D camera sensing for real-time obstacle detection and navigation.",
+      achievements: [
+        "Developed an autonomous perception pipeline on the F1TENTH racing platform using ROS",
+        "Integrated LiDAR and RGB-D camera sensing for real-time obstacle detection and distance estimation, and implemented automatic emergency braking using depth and LiDAR distance thresholds",
+        "Built a sign classification system with OpenCV to detect parking and traffic signs and adjust vehicle behavior"
+      ],
+      technologies: ["ROS", "Python", "C++", "OpenCV", "LiDAR", "RGB-D Camera"],
+      github: "#",
+      live: "#"
+    },
+    {
+      id: 7,
+      title: "ARC4 Encryption Cracking Accelerator",
+      subtitle: "UBC • Mar 2026",
+      description: "A SystemVerilog ARC4 stream cipher decryption engine with dual-core brute-force key cracking, verified through RTL simulation and deployed on FPGA hardware.",
+      achievements: [
+        "Designed and implemented an ARC4 stream cipher decryption engine in SystemVerilog, including key-scheduling and pseudo-random generation modules interfaced with on-chip memory (M10K) via a custom ready/enable handshaking protocol",
+        "Built a brute-force key-cracking module that searches a 24-bit key space and validates decryption via ASCII plausibility checks, then parallelized it into a dual-core architecture achieving a 2x speedup over the single-core design",
+        "Verified all modules through RTL and post-synthesis netlist simulation in ModelSim and deployed the design on FPGA hardware"
+      ],
+      technologies: ["SystemVerilog", "Digital Logic", "FPGA", "Quartus Prime", "ModelSim"],
+      github: "#",
+      live: "#"
+    },
     {
       id: 0,
       title: "20-20-20 Break Timer Extension",
@@ -35,13 +61,16 @@ export default function ProjectsPage() {
     {
       id: 5,
       title: "ResumeCritic",
-      subtitle: "Personal • Sept 2025 - Present",
-      description: "A full-stack NLP-powered resume analysis platform that analyzes resumes against job descriptions using spaCy and rule-based keyword matching.",
+      subtitle: "Personal • Sept 2025 - Dec 2025",
+      description: "A full-stack AI-powered resume analysis platform applying NLP techniques for automated resume–job matching with semantic similarity scoring and LLM evaluation.",
       achievements: [
+        "Built a full-stack AI-powered resume analysis platform, applying NLP techniques for automated resume–job matching",
         "Designed and built a full-stack resume analysis platform using Next.js, FastAPI, and spaCy, enabling automated extraction and comparison of technical keywords from resumes and job descriptions",
-        "Implemented PDF parsing, NLP-based keyword matching, and scoring logic, paired with a responsive React UI for real-time analysis and feedback"
+        "Implemented semantic similarity scoring with sentence transformers and rule-based keyword extraction",
+        "Implemented PDF parsing, NLP-based keyword matching, and scoring logic, paired with a responsive React UI for real-time analysis and feedback",
+        "Integrated Google Gemini API for LLM-based resume evaluation of technical skills and experience"
       ],
-      technologies: ["Next.js", "React", "FastAPI", "Python", "spaCy", "NLP", "PDF Parsing"],
+      technologies: ["Next.js", "React", "TypeScript", "FastAPI", "Python", "Gemini API", "spaCy", "NLP", "pdfplumber"],
       github: "https://github.com/kathrynezong/ResumeCritic",
       live: "#"
     },
@@ -77,13 +106,14 @@ export default function ProjectsPage() {
       id: 3,
       title: "Simple RISC Machine",
       subtitle: "UBC • Oct 2024 - Dec 2024",
-      description: "A complete processor design project implementing a Simple RISC architecture with FPGA integration.",
+      description: "A complete Simple RISC processor design with FSM-based control unit, verified through ModelSim simulation and deployed on FPGA hardware.",
       achievements: [
-        "Designed and implemented a Simple RISC processor, including data path and finite state machine controller",
+        "Designed and implemented a Simple RISC processor using SystemVerilog, developing the datapath and FSM-based control unit based on digital logic design principles",
         "Programmed memory mapped I/O for external communication, increasing processor versatility",
-        "Verified functionality using ModelSim and Quartus by simulating memory and instruction in SystemVerilog and integrating with FPGA"
+        "Verified instruction execution through ModelSim simulation using custom testbenches and synthesis checks in Quartus Prime",
+        "Deployed the processor design on FPGA hardware to validate functionality and instruction-level performance"
       ],
-      technologies: ["SystemVerilog", "ModelSim", "Quartus", "FPGA"],
+      technologies: ["SystemVerilog", "Digital Logic", "FPGA", "Quartus Prime", "ModelSim"],
       github: "#",
       live: "#"
     },
@@ -128,7 +158,7 @@ export default function ProjectsPage() {
               <h4 style={{ color: '#6b7280', fontSize: '1.1rem', fontWeight: 600, marginBottom: '0.5rem' }}>{project.subtitle}</h4>
               <p style={{ color: '#1a1a1a', marginBottom: '1.5rem', lineHeight: '1.6' }}>{project.description}</p>
               <div style={{ marginBottom: '1.5rem' }}>
-                <h4 style={{ color: '#90D5FF', marginBottom: '0.75rem', fontWeight: 600 }}>Key Achievements:</h4>
+                <h4 style={{ color: '#90D5FF', marginBottom: '0.75rem', fontWeight: 600 }}>Description:</h4>
                 <ul style={{ color: '#1a1a1a', paddingLeft: '1.5rem' }}>
                   {project.achievements.map((achievement, index) => (
                     <li key={index} style={{ marginBottom: '0.5rem', lineHeight: '1.5' }}>
@@ -152,7 +182,6 @@ export default function ProjectsPage() {
                   </span>
                 ))}
               </div>
-              {/* GitHub links disabled since repository is a fork/private */}
               {project.github !== "#" && (
                 <a href={project.github} target="_blank" rel="noopener noreferrer" style={{
                   color: '#90D5FF',
@@ -176,4 +205,4 @@ export default function ProjectsPage() {
       </div>
     </div>
   );
-} 
+}

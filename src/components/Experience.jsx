@@ -1,10 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-const projects = [
-  { title: 'Software Engineering Co-op', description: 'Refactor and improve next-generation 2D/3D image acquisition...', link: '#', id: 1 },
-  { title: 'Firmware Member', description: 'Researching firmware modules in C++ capable of integrating ultrasonic...', link: '#', id: 2 },
-  { title: 'Math Tutor', description: 'Designed personalized lessons to help high school students grasp complex...', link: '#', id: 3 },
-];
+
 export default function Experience() {
   const navigate = useNavigate();
   return (
@@ -13,20 +9,23 @@ export default function Experience() {
         <h3 style={{ color: '#1a1a1a', marginBottom: '1.5rem', fontSize: '1.3rem', fontWeight: 600 }}>what i've been up to:</h3>
         
         <div>
-          {/* <p style={{ color: '#1a1a1a', marginBottom: '1rem' }}>
-            <span style={{ fontWeight: 600 }}>working at:</span>
-          </p> */}
           <ul style={{ color: '#1a1a1a', listStyle: 'none', padding: 0, marginBottom: '1.5rem' }}>
-            <li style={{ marginBottom: '1rem', cursor: 'pointer' }} onClick={() => navigate(`/experience#job-1`)}>
-              <span style={{ color: '#90D5FF', fontWeight: 600 }}>Arius Technology Inc.</span> - Software Engineering Co-op (May 2025 - Present)
+            <li style={{ marginBottom: '1rem', cursor: 'pointer' }} onClick={() => navigate(`/experience#job-0`)}>
+              <span style={{ color: '#90D5FF', fontWeight: 600 }}>Royal Bank of Canada</span> - Software Developer Co-op (May 2026 - Present)
               <p style={{ color: '#6b7280', fontSize: '0.9rem', marginTop: '0.25rem', marginLeft: '2rem' }}>
-                Refactoring next-generation 2D/3D image acquisition and processing software...
+                Building a vulnerability tracking dashboard and automating incident analysis with AI agent skills...
+              </p>
+            </li>
+            <li style={{ marginBottom: '1rem', cursor: 'pointer' }} onClick={() => navigate(`/experience#job-1`)}>
+              <span style={{ color: '#90D5FF', fontWeight: 600 }}>Arius Technology Inc.</span> - Software Engineering Co-op (May 2025 - Dec 2025)
+              <p style={{ color: '#6b7280', fontSize: '0.9rem', marginTop: '0.25rem', marginLeft: '2rem' }}>
+                Refactored C++ and Python processing pipelines and improved point cloud processing with Open3D...
               </p>
             </li>
             <li style={{ marginBottom: '1rem', cursor: 'pointer' }} onClick={() => navigate(`/experience#job-2`)}>
-              <span style={{ color: '#90D5FF', fontWeight: 600 }}>Open Robotics UBC</span> - Firmware Member (Jan 2025 - Present)
+              <span style={{ color: '#90D5FF', fontWeight: 600 }}>UBC Open Robotics</span> - Firmware/Software Member (Jan 2025 - Present)
               <p style={{ color: '#6b7280', fontSize: '0.9rem', marginTop: '0.25rem', marginLeft: '2rem' }}>
-                Firmware development using C/C++ for ultrasonic, IMU, and LiDAR sensors...
+                Designed a real-time telemetry system with ESP32 and TCP/JSON client-server interface...
               </p>
             </li>
             <li style={{ marginBottom: '1rem', cursor: 'pointer' }} onClick={() => navigate(`/experience#job-3`)}>

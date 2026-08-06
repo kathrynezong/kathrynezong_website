@@ -1,43 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-const projects = [
-  { 
-    title: '20-20-20 Break Timer Extension', 
-    description: 'A Chrome extension timer that follows the 20-20-20 rule with screen lock reminders to help protect your eyes...', 
-    link: '#', 
-    id: 0 
-  },
-  { 
-    title: 'ResumeCritic', 
-    description: 'A full-stack NLP-powered resume analysis platform that analyzes resumes against job descriptions...', 
-    link: '#', 
-    id: 5 
-  },
-  { 
-    title: 'Obstacle Avoidance Vehicle', 
-    description: 'Assembled key components including DC motors, motor driver, and ultrasonic sensor to enable autonomous navigation...', 
-    link: '#', 
-    id: 1 
-  },
-  { 
-    title: 'Simple RISC Machine', 
-    description: 'Designed and implemented a Simple RISC processor, including data path and finite state machine controller...', 
-    link: '#', 
-    id: 2 
-  },
-  { 
-    title: 'Quiz Application', 
-    description: 'Collaborated with other students to design and implement a quiz application for UBC students...', 
-    link: '#', 
-    id: 3 
-  },
-  { 
-    title: 'Portfolio Website', 
-    description: 'Personal portfolio website showcasing projects, experience, and skills...', 
-    link: '#', 
-    id: 4 
-  },
-];
+
 export default function Projects() {
   const navigate = useNavigate();
   return (
@@ -47,6 +10,18 @@ export default function Projects() {
         
         <div>
           <ul style={{ color: '#1a1a1a', listStyle: 'none', padding: 0, marginBottom: '1.5rem' }}>
+            <li style={{ marginBottom: '1rem', cursor: 'pointer' }} onClick={() => navigate(`/projects#project-6`)}>
+              <span style={{ color: '#90D5FF', fontWeight: 600 }}>Autonomous Vehicle Perception & Navigation System</span> - UBC (Jan 2026 - Apr 2026)
+              <p style={{ color: '#6b7280', fontSize: '0.9rem', marginTop: '0.25rem', marginLeft: '2rem' }}>
+                Autonomous perception pipeline on the F1TENTH platform with LiDAR, RGB-D camera, and sign classification...
+              </p>
+            </li>
+            <li style={{ marginBottom: '1rem', cursor: 'pointer' }} onClick={() => navigate(`/projects#project-7`)}>
+              <span style={{ color: '#90D5FF', fontWeight: 600 }}>ARC4 Encryption Cracking Accelerator</span> - UBC (Mar 2026)
+              <p style={{ color: '#6b7280', fontSize: '0.9rem', marginTop: '0.25rem', marginLeft: '2rem' }}>
+                SystemVerilog ARC4 decryption engine with dual-core brute-force key cracking on FPGA...
+              </p>
+            </li>
             <li style={{ marginBottom: '1rem', cursor: 'pointer' }} onClick={() => navigate(`/projects#project-0`)}>
               <span style={{ color: '#90D5FF', fontWeight: 600 }}>20-20-20 Break Timer Extension</span> - Personal (Nov 2025)
               <p style={{ color: '#6b7280', fontSize: '0.9rem', marginTop: '0.25rem', marginLeft: '2rem' }}>
@@ -54,9 +29,9 @@ export default function Projects() {
               </p>
             </li>
             <li style={{ marginBottom: '1rem', cursor: 'pointer' }} onClick={() => navigate(`/projects#project-5`)}>
-              <span style={{ color: '#90D5FF', fontWeight: 600 }}>ResumeCritic</span> - Personal (Sept 2025 - Present)
+              <span style={{ color: '#90D5FF', fontWeight: 600 }}>ResumeCritic</span> - Personal (Sept 2025 - Dec 2025)
               <p style={{ color: '#6b7280', fontSize: '0.9rem', marginTop: '0.25rem', marginLeft: '2rem' }}>
-                A full-stack NLP-powered resume analysis platform that analyzes resumes against job descriptions...
+                Full-stack AI-powered resume analysis platform with semantic similarity scoring and LLM evaluation...
               </p>
             </li>
             <li style={{ marginBottom: '1rem', cursor: 'pointer' }} onClick={() => navigate(`/projects#project-1`)}>
@@ -74,7 +49,7 @@ export default function Projects() {
             <li style={{ marginBottom: '1rem', cursor: 'pointer' }} onClick={() => navigate(`/projects#project-3`)}>
               <span style={{ color: '#90D5FF', fontWeight: 600 }}>Simple RISC Machine</span> - UBC (Oct 2024 - Dec 2024)
               <p style={{ color: '#6b7280', fontSize: '0.9rem', marginTop: '0.25rem', marginLeft: '2rem' }}>
-                Designed and implemented a Simple RISC processor, including data path and finite state machine controller...
+                Designed and implemented a Simple RISC processor with FSM-based control unit on FPGA...
               </p>
             </li>
             <li style={{ marginBottom: '1rem', cursor: 'pointer' }} onClick={() => navigate(`/projects#project-4`)}>

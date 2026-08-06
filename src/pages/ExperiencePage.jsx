@@ -5,11 +5,9 @@ export default function ExperiencePage() {
   const location = useLocation();
 
   useEffect(() => {
-    // Check if there's a hash in the URL and scroll to that element
     if (location.hash) {
       const element = document.querySelector(location.hash);
       if (element) {
-        // Add a small delay to ensure the page is fully rendered
         setTimeout(() => {
           element.scrollIntoView({ behavior: 'smooth', block: 'center' });
         }, 100);
@@ -19,32 +17,51 @@ export default function ExperiencePage() {
 
   const experience = [
     {
+      id: 0,
+      company: "Royal Bank of Canada",
+      position: "Software Developer Co-op",
+      duration: "May 2026 - Present",
+      location: "Vancouver, BC",
+      achievements: [
+        "Automated incident analysis and reporting by configuring AI agent skills (GitHub Copilot) to analyze incident data and generate structured reports, reducing manual reporting effort",
+        "Developed a FastAPI and React/TypeScript vulnerability tracking dashboard, adopted by multiple team members, to consolidate findings across supported applications and auto-detect resolved and reopened vulnerabilities from weekly scan reports",
+        "Implemented user authentication, application onboarding, and activity logging to track which users performed which actions across the platform",
+        "Authored prompts and curated reference resources for an internal AI agent to surface runbook-based remediation steps, escalation paths, and business impact during incidents"
+      ],
+      technologies: ["FastAPI", "React", "TypeScript", "Python", "GitHub Copilot", "Git"]
+    },
+    {
       id: 1,
       company: "Arius Technology Inc.",
       position: "Software Engineering Co-op",
-      duration: "May 2025 - Present",
+      duration: "May 2025 - December 2025",
       location: "Richmond, BC",
-      // description: "Leading development of enterprise web applications and mentoring junior developers.",
       achievements: [
-        "Refactor and improve next-generation 2D/3D image acquisition and processing software",
-        "Researched, implemented, and evaluated alternative 3D pose estimation and surface normal calculation methods using the Python Open3D library, improving color correction accuracy and overall rendering quality",
+        "Refactored and optimized C++ and Python processing pipelines across hardware–software toolchains, improving numerical accuracy and runtime performance",
+        "Refactored and improved next-generation 2D/3D image acquisition and processing software",
+        "Extended the pose transformation pipeline with YAML-based configuration parsing to support new data formats while maintaining backward compatibility",
         "Extended and refactored the codebase to support new data formats and enhance flexibility for future features and applications",
-        "Collaborate in Agile workflows through daily stand-up meetings and project management tools including Jira, Git, and Azure DevOps"
+        "Improved point cloud processing using Open3D, optimizing normal estimation and plane segmentation algorithms for increased geometric accuracy",
+        "Researched, implemented, and evaluated alternative 3D pose estimation and surface normal calculation methods using the Python Open3D library, improving color correction accuracy and overall rendering quality",
+        "Developed Python unit and regression tests by exposing C++ pipelines via pybind11, enabling automated validation of processing workflows",
+        "Collaborated in Agile workflows through daily stand-up meetings and project management tools including Jira, Git, and Azure DevOps"
       ],
-      technologies: ["C++", "Python", "CMake", "GTest", "Azure DevOps", "Git", "Jira", "Jenkins"]
+      technologies: ["C++", "Python", "Open3D", "pybind11", "YAML", "CMake", "GTest", "Azure DevOps", "Git", "Jira", "Jenkins"]
     },
     {
       id: 2,
-      company: "Open Robotics UBC",
-      position: "Software/Firmware Member",
+      company: "UBC Open Robotics",
+      position: "Firmware/Software Member",
       duration: "Jan 2025 - Present",
       location: "Vancouver, BC",
       achievements: [
-        "Firmware development using C/C++ for ultrasonic, IMU, and LiDAR sensors.",
-        "Implementing unit tests for sensor modules using CMake and Google Test to verify sensor accuracy and system reliability",
-        "Collaborating on design of a scalable telemetry system for real-time sensor data collection, visualization, and post-processing using ESP-32 microcontrollers"
+        "Designed and integrated a real-time telemetry system to ingest four sensor types (temperature, humidity, pressure, light) from an ESP32 source at configurable sampling rates, delivering structured data to a desktop visualization client with a 10 ms refresh cycle",
+        "Implemented a TCP/JSON client–server interface with command controls for start/stop and configurable sampling rate, including automatic reconnection logic to improve reliability across firmware–client communication",
+        "Firmware development using C/C++ for ultrasonic, IMU, and LiDAR sensors",
+        "Implemented unit tests for sensor modules using CMake and Google Test to verify sensor accuracy and system reliability",
+        "Collaborated on design of a scalable telemetry system for real-time sensor data collection, visualization, and post-processing using ESP-32 microcontrollers"
       ],
-      technologies: ["C++", "C", "CMake", "Google Test", "ESP-32", "RTOS", "ROS", "GitHub"]
+      technologies: ["C++", "C", "ESP32", "TCP/JSON", "CMake", "Google Test", "Embedded Systems", "RTOS", "ROS", "Git"]
     },
     {
       id: 3,
@@ -52,9 +69,8 @@ export default function ExperiencePage() {
       position: "Math Tutor",
       duration: "2024 - 2025",
       location: "Vancouver, BC",
-      // description: "Contributed to various startup projects and learned modern development practices.",
       achievements: [
-        "Designed personalized lessons to help high school students grasp complex math concepts and boostacademic performance",
+        "Designed personalized lessons to help high school students grasp complex math concepts and boost academic performance",
         "Fostered confidence and problem-solving skills through one-on-one and group tutoring sessions",
         "Provided targeted support for homework, test preparation, and critical thinking development"
       ],
@@ -64,23 +80,25 @@ export default function ExperiencePage() {
 
   const skills = {
     "Programming Languages": [
-      "C / C++",
       "Python",
+      "C / C++",
       "Java",
-      "JavaScript",
+      "JavaScript / TypeScript",
       "Swift",
       "SystemVerilog",
-      "ARM Assembly"
+      "x86 Assembly",
+      "ARM Assembly",
+      "SQL",
+      "HTML / CSS"
     ],
-  
     "Hardware & Embedded Systems": [
       "FPGA Development",
       "Embedded Systems",
       "Arduino",
       "Circuit Analysis",
-      "Lab Instrumentation"
+      "Lab Instrumentation",
+      "Digital Logic"
     ],
-  
     "Web & Software": [
       "HTML",
       "CSS",
@@ -89,19 +107,19 @@ export default function ExperiencePage() {
       "React",
       "Next.js"
     ],
-  
-    "Tools & Workflow": [
+    "Developer Tools": [
       "Git",
       "Linux",
       "CMake",
+      "Docker",
       "CI/CD",
       "Quartus Prime",
       "ModelSim",
-      "PlatformIO",
-      "VS Code"
+      "Visual Studio",
+      "VS Code",
+      "PlatformIO"
     ]
   };
-  
 
   return (
     <div style={{ padding: '2rem', maxWidth: '1200px', margin: '0 auto', paddingTop: '2rem' }}>
@@ -109,7 +127,6 @@ export default function ExperiencePage() {
         Experience & Skills
       </h1>
       
-      {/* Experience Section */}
       <section style={{ marginBottom: '4rem' }}>
         <h2 style={{ color: '#90D5FF', marginBottom: '2rem', fontSize: '2rem', textAlign: 'center', fontWeight: 600 }}>Experience</h2>
         
@@ -141,9 +158,6 @@ export default function ExperiencePage() {
                     </p>
                   </div>
                 </div>
-                <p style={{ color: '#444', marginBottom: '1.5rem', lineHeight: '1.6' }}>
-                  {job.description}
-                </p>
                 <div style={{ marginBottom: '1.5rem' }}>
                   <h4 style={{ color: '#90D5FF', marginBottom: '0.75rem', fontWeight: 600 }}>Description:</h4>
                   <ul style={{ color: '#1a1a1a', paddingLeft: '1.5rem' }}>
@@ -180,7 +194,6 @@ export default function ExperiencePage() {
         </div>
       </section>
       
-      {/* Skills Section */}
       <section>
         <h2 style={{ color: '#90D5FF', marginBottom: '2rem', fontSize: '2rem', textAlign: 'center', fontWeight: 600 }}>Technical Skills</h2>
         
@@ -224,4 +237,4 @@ export default function ExperiencePage() {
       </section>
     </div>
   );
-} 
+}
